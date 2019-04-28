@@ -18,6 +18,11 @@ class AttractionsController < ApplicationController
     redirect_to attraction_path(@attraction)
   end
 
+  def update
+    @attraction = Attraction.find(params[:attraction][:id])
+    @attraction.update(attraction_params)
+    redirect_to attraction_path(@attraction)
+
   def edit
     @attraction = Attraction.find(params[:id])
   end
